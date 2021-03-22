@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  web:
+    container_name: nginx-study
+    image: nginx
+    volumes:
+    - ./templates:/etc/nginx/templates
+    - ./images:/data/images
+    - ./www:/data/www
+    - ./www2:/data/up1
+    - ./conf/nginx.conf:/etc/nginx/nginx.conf
+    - ./conf/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+    - "8080:80"
